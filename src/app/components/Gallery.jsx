@@ -48,9 +48,7 @@ export default function Gallery() {
           hover:bg-opacity-75
         "
         aria-label="Previous slide"
-      >
-        ◀
-      </button>
+      ></button>
 
       {/* Right arrow */}
       <button
@@ -63,9 +61,7 @@ export default function Gallery() {
           hover:bg-opacity-75
         "
         aria-label="Next slide"
-      >
-        ▶
-      </button>
+      ></button>
     </div>
   );
 }
