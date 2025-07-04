@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "My Aunties Wardrobe",
   description: "Pre loved boutique in Braidwood NSW",
+  images: [
+    {
+      url: "maw_whitelogo.png",
+      width: 500,
+      height: 500,
+      alt: "My Aunties Wardrobe logo on pastel background",
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
