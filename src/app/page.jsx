@@ -19,9 +19,28 @@ export default function HomePage() {
       </div>
 
       {/* Gallery Section */}
-      <section className="py-16 px-4 text-center">
-        <h2 className="text-1xl font-bold mb-8">Gallery</h2>
-        <Gallery />
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
+          {/* Gallery on left for desktop, below text on mobile */}
+          <div className="w-full md:w-1/2">
+            <Gallery />
+          </div>
+          {/* Text write-up */}
+          <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
+            <p>
+              My Aunties Wardrobe is a charming pre-loved clothing store nestled
+              in the heart of Braidwood, offering a curated selection of
+              everyday wear and exquisite pieces for special occasions.
+            </p>
+            <p>
+              With a passion for sustainability and style, we give new life to
+              gently loved fashion. Whether you’re after something timeless for
+              everyday wear or something truly unique for a celebration, we’re
+              here to help you. While you express your individual style, we look
+              forward to you adding new life and history to each piece.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Location Section */}
