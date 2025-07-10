@@ -7,6 +7,10 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        heading: ["var(--font-playfair)", "serif"],
+        body: ["var(--font-lora)", "serif"],
+      },
     },
   },
   plugins: [],
