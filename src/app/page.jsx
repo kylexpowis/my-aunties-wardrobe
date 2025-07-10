@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/ContactForm";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 export default function HomePage() {
   // 1️⃣ Create refs for each section
@@ -25,7 +26,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="bg-black text-white font-sans overflow-x-hidden mt-[68px]">
+    <main className=" text-white font-sans overflow-x-hidden mt-[68px]">
+      <ParticlesBackground />
       {/* 4️⃣ Pass handler & refs into NavBar */}
       <NavBar
         scrollToSection={scrollToSection}
