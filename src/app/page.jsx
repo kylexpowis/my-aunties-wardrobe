@@ -26,7 +26,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className=" text-white font-sans overflow-x-hidden mt-[68px]">
+    <main className=" text-white overflow-x-hidden mt-[68px] font-heading">
       <ParticlesBackground />
       {/* 4️⃣ Pass handler & refs into NavBar */}
       <NavBar
@@ -46,8 +46,8 @@ export default function HomePage() {
       </div>
 
       {/* Gallery Section */}
-      <section ref={galleryRef} className="scroll-mt-16 py-16 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
+      <section ref={galleryRef} className="scroll-mt-16 py-16 px-4 ">
+        <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 ">
           <div className="w-full md:w-1/2">
             <Gallery />
           </div>
@@ -70,7 +70,9 @@ export default function HomePage() {
 
       {/* Find Us Section */}
       <section ref={findUsRef} className="scroll-mt-16 py-16 px-4">
-        <h2 className="text-2xl font-bold mb-8 text-center">Find us 📍</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center font-heading">
+          Find us 📍
+        </h2>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="w-full md:w-1/2 h-64 md:h-96">
             <iframe
