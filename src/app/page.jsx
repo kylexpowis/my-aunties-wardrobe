@@ -35,7 +35,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="text-white overflow-x-hidden mt-[68px] font-heading">
+    <main className="text-white overflow-x-hidden mt-[68px] font-heading scroll-smooth">
       <ParticlesBackground />
       <NavBar
         scrollToSection={scrollToSection}
