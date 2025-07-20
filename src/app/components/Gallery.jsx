@@ -42,31 +42,57 @@ export default function Gallery() {
         className="w-full h-full object-cover transition duration-500 ease-in-out"
       />
 
-      {/* Left arrow */}
+      {/* Left Arrow */}
       <button
         onClick={prevSlide}
-        className="
-          absolute top-1/2 left-2
-          -translate-y-1/2
-          text-white
-          p-2 rounded-full
-          hover:bg-opacity-75
-        "
+        className="absolute top-1/2 left-2 -translate-y-1/2 text-white bg-black/30 p-1 rounded-full"
         aria-label="Previous slide"
-      ></button>
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
 
-      {/* Right arrow */}
+      {/* Right Arrow */}
       <button
         onClick={nextSlide}
-        className="
-          absolute top-1/2 right-2
-          -translate-y-1/2
-          text-white
-          p-2 rounded-full
-          hover:bg-opacity-75
-        "
+        className="absolute top-1/2 right-2 -translate-y-1/2 text-white bg-black/30 p-1 rounded-full"
         aria-label="Next slide"
-      ></button>
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Pagination Dots */}
+      <div className="absolute bottom-2 w-full flex justify-center gap-1">
+        {images.map((_, i) => (
+          <div
+            key={i}
+            className={`w-2 h-2 rounded-full transition-all ${
+              i === index ? "bg-white/80" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
