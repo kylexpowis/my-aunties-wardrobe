@@ -47,6 +47,9 @@ h6 {
   z-index: -1; /* behind your content */
   pointer-events: none;
 }
+#tsparticles canvas {
+  pointer-events: none !important;
+}
 
 /* Solid black layer behind particles */
 .black-background {
