@@ -26,6 +26,9 @@ export const metadata = {
       alt: "My Aunties Wardrobe logo on pastel background",
     },
   ],
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
