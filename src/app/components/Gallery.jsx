@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const images = [
   "/images/necklace.jpg",
@@ -16,6 +16,9 @@ const images = [
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
+  const containerRef = useRef(null);
+  const touchStartXRef = useRef(null);
+  const touchEndXRef = useRef(null);
 
   // Auto slide every 5 seconds
   useEffect(() => {
@@ -23,6 +26,49 @@ export default function Gallery() {
       setIndex((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Swipe gesture handling
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleTouchStart = (e) => {
+      touchStartXRef.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+      touchEndXRef.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      if (!touchStartXRef.current || !touchEndXRef.current) return;
+      const distance = touchStartXRef.current - touchEndXRef.current;
+      const minSwipeDistance = 50;
+
+      if (distance > minSwipeDistance) {
+        // swipe left
+        setIndex((prev) => (prev + 1) % images.length);
+      } else if (distance < -minSwipeDistance) {
+        // swipe right
+        setIndex((prev) => (prev - 1 + images.length) % images.length);
+      }
+
+      touchStartXRef.current = null;
+      touchEndXRef.current = null;
+    };
+
+    container.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    container.addEventListener("touchmove", handleTouchMove, { passive: true });
+    container.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
+      container.removeEventListener("touchend", handleTouchEnd);
+    };
   }, []);
 
   const prevSlide = () => {
@@ -34,13 +80,24 @@ export default function Gallery() {
   };
 
   return (
-    <div className="relative w-full max-w-xs mx-auto aspect-[9/16] overflow-hidden rounded shadow-lg">
-      {/* Image */}
-      <img
-        src={images[index]}
-        alt={`Slide ${index + 1}`}
-        className="w-full h-full object-cover transition duration-500 ease-in-out"
-      />
+    <div
+      ref={containerRef}
+      className="relative w-full max-w-xs mx-auto aspect-[9/16] overflow-hidden rounded shadow-lg"
+    >
+      {/* Sliding Image Strip */}
+      <div
+        className="flex w-full h-full transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${index * 100}%)` }}
+      >
+        {images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`Slide ${i + 1}`}
+            className="w-full flex-shrink-0 object-cover"
+          />
+        ))}
+      </div>
 
       {/* Left Arrow */}
       <button
@@ -49,12 +106,11 @@ export default function Gallery() {
         aria-label="Previous slide"
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="w-4 h-4"
           fill="none"
-          viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth={2}
+          strokeWidth="2"
+          viewBox="0 0 24 24"
         >
           <path
             strokeLinecap="round"
@@ -71,12 +127,11 @@ export default function Gallery() {
         aria-label="Next slide"
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="w-4 h-4"
           fill="none"
-          viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth={2}
+          strokeWidth="2"
+          viewBox="0 0 24 24"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
