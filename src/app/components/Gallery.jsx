@@ -7,6 +7,11 @@ const images = [
   "/images/shop1.jpg",
   "/images/shop2.jpg",
   "/images/shop3.jpg",
+  "/images/leather_hermes_gloves.jpg",
+  "/images/boutique_womenswear.jpg",
+  "/images/ladies_boutique_clothing.jpg",
+  "/images/mens_shirt.jpg",
+  "/images/gucci_sunglasses_and_necklace.jpg",
 ];
 
 export default function Gallery() {
