@@ -94,7 +94,7 @@ export default function HomePage() {
       </section>
 
       {/* Find Us Section */}
-      <section ref={findUsRef} className="scroll-mt-16 py-16 px-4">
+      <section ref={findUsRef} className="scroll-mt-16 py-16 px-4 min-h-screen">
         <h2 className="text-2xl font-bold mb-8 text-center font-heading">
           Find us 📍
         </h2>
