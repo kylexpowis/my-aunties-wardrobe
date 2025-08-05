@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import NavBar from "./components/NavBar";
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/ContactForm";
-import ParticlesBackground from "./components/ParticlesBackground";
+
 
 export default function HomePage() {
   const galleryRef = useRef(null);
@@ -36,7 +36,6 @@ export default function HomePage() {
 
   return (
     <main className="text-white overflow-x-hidden mt-[68px] font-heading scroll-smooth">
-      <ParticlesBackground />
       <NavBar
         scrollToSection={scrollToSection}
         galleryRef={galleryRef}
