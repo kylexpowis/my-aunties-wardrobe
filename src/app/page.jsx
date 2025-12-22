@@ -164,7 +164,6 @@ export default function HomePage() {
         <p className="mt-4">
           We hope you have a Merry Christmas and a Happy New Year!
         </p>
-        <ContactForm />
       </motion.div>
 
       {/* Contact Section */}
