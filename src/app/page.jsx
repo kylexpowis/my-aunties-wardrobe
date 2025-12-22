@@ -7,7 +7,6 @@ import NavBar from "./components/NavBar";
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/ContactForm";
 
-
 export default function HomePage() {
   const galleryRef = useRef(null);
   const findUsRef = useRef(null);
@@ -135,6 +134,38 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Christmas Hours */}
+      <motion.div
+        ref={contactRef}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        className="scroll-mt-16 py-16 px-4 text-center"
+      >
+        <h3 className="text-xl font-semibold mb-4">
+          Christmas Opening Hours 🧑‍🎄 🎄
+        </h3>
+        <p>Mon 22nd - 10am - 4pm</p>
+        <p>Tues 23rd - 10am - 4pm</p>
+        <p>Christmas Eve - Closed</p>
+        <p>Christmas Day - Closed</p>
+        <p>Boxing Day - Closed</p>
+        <p>Sat 27th - 10 am - 4pm</p>
+        <p>Sun 28th - 10 am - 4pm</p>
+        <p>Mon 29th - 10 am - 4pm</p>
+        <p>New Years Eve - Closed</p>
+        <p>New Years Day - Closed</p>
+        <p className="mt-4">
+          We hope you have a Merry Christmas and a Happy New Year!
+        </p>
+        <ContactForm />
+      </motion.div>
 
       {/* Contact Section */}
       <motion.div
