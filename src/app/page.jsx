@@ -92,7 +92,7 @@ export default function HomePage() {
       </section>
 
       {/* Find Us Section */}
-      <section ref={findUsRef} className="scroll-mt-16 py-16 px-4 min-h-screen">
+      <section ref={findUsRef} className="scroll-mt-16 py-16 px-4 min-h-[70vh]">
         <h2 className="text-2xl font-bold mb-8 text-center font-heading">
           Find us 📍
         </h2>
@@ -135,7 +135,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Christmas Hours */}
+      {/* Christmas Hours
       <motion.div
         ref={contactRef}
         initial="hidden"
@@ -164,7 +164,7 @@ export default function HomePage() {
         <p className="mt-4">
           We hope you have a Merry Christmas and a Happy New Year!
         </p>
-      </motion.div>
+      </motion.div> */}
 
       {/* Contact Section */}
       <motion.div
