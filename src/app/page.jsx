@@ -41,7 +41,6 @@ export default function HomePage() {
         findUsRef={findUsRef}
         contactRef={contactRef}
       />
-
       {/* Banner */}
       <div className="w-full aspect-[16/9] overflow-hidden">
         <img
@@ -50,7 +49,6 @@ export default function HomePage() {
           className="w-full h-full object-cover"
         />
       </div>
-
       {/* Gallery Section */}
       <section ref={galleryRef} className="scroll-mt-16 py-16 px-4">
         <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
@@ -90,7 +88,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Find Us Section */}
       <section ref={findUsRef} className="scroll-mt-16 py-16 px-4 min-h-[70vh]">
         <h2 className="text-2xl font-bold mb-8 text-center font-heading">
@@ -134,7 +131,28 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
+      Christmas Hours
+      <motion.div
+        ref={contactRef}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        className="scroll-mt-16 py-16 px-4 text-center"
+      >
+        <h3 className="text-xl font-semibold mb-4">Opening Hours</h3>
+        <p>Mon: 10am - 4pm</p>
+        <p>Tues: 10am - 4pm</p>
+        <p>Weds: Closed</p>
+        <p>Thurs: 10am - 4pm</p>
+        <p>Fri: 10am - 4pm</p>
+        <p>Sat: 10 am - 4pm</p>
+        <p>Sun: 10 am - 4pm</p>
+      </motion.div>
       {/* Christmas Hours
       <motion.div
         ref={contactRef}
@@ -165,7 +183,6 @@ export default function HomePage() {
           We hope you have a Merry Christmas and a Happy New Year!
         </p>
       </motion.div> */}
-
       {/* Contact Section */}
       <motion.div
         ref={contactRef}
