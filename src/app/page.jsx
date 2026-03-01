@@ -131,7 +131,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-      Christmas Hours
       <motion.div
         ref={contactRef}
         initial="hidden"
